@@ -1,5 +1,5 @@
-import React from 'react';
-import Sidebar from '../components/ViewComponent/SideBarComponents/SideBar';
+import React, { useState } from 'react';
+import SideBarLeft from '../components/ViewComponent/SideBarComponents/SideBarLeft';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import ActivityFeed from '../components/ViewComponent/SideBarComponents/ActivityFeedComponent';
 import Applications from '../components/ViewComponent/SideBarComponents/ApplicationComponent';
@@ -9,98 +9,66 @@ import Payouts from '../components/ViewComponent/SideBarComponents/PayoutCompone
 import Referal_Program from '../components/ViewComponent/SideBarComponents/ReferralComponent';
 import Company from '../components/ViewComponent/SideBarComponents/CompanyComponent';
 import LeaderBoard from '../components/ViewComponent/SideBarComponents/LeaderboardComponent';
+
 import BarChart from '../components/BarCharts/BarChart';
+import BarChart2 from '../components/BarCharts/Barchart2';
+import DoughnutChart  from '../components/BarCharts/DoughnutChart';
+import LineChart from '../components/BarCharts/LineChart';
+import ReferalTrendChart from '../components/BarCharts/ReferalSourcesTrendChart';
 import '../App.css'
 
-const DashboardViewPage = () => {
 
+import 'tailwindcss/tailwind.css';
+
+
+
+const DashBoardView = () => {
   return (
+    <div>
+
+    <div class="sidebar"> 
+           <BrowserRouter>
+         <SideBarLeft>
+           <Routes>
+    <Route path="/ActivityFeed" element={<ActivityFeed />} />
+       <Route path="/Applications" element={<Applications />} />
+    <Route path="/Job_listing" element={<Job_listing />} />
+       <Route path="/Employees" element={<Employees />} />
+    <Route path="/Payouts" element={<Payouts />} />
+        <Route path="/Referal_Program" element={<Referal_Program />} />
+     <Route path="/Company" element={<Company />} />
+      <Route path="/LeaderBoard" element={<LeaderBoard />} />
+           </Routes>
+         </SideBarLeft>
+       </BrowserRouter>
+      
+     </div>
 
 
-    <div className="admin-dashboard">
-    <div className="sidebar">
-      {/* Sidebar content */}
-      <BrowserRouter>
-        <Sidebar>
-          <Routes>
-   <Route path="/ActivityFeed" element={<ActivityFeed />} />
-      <Route path="/Applications" element={<Applications />} />
-   <Route path="/Job_listing" element={<Job_listing />} />
-      <Route path="/Employees" element={<Employees />} />
-   <Route path="/Payouts" element={<Payouts />} />
-       <Route path="/Referal_Program" element={<Referal_Program />} />
-    <Route path="/Company" element={<Company />} />
-     <Route path="/LeaderBoard" element={<LeaderBoard />} />
-          </Routes>
-        </Sidebar>
-      </BrowserRouter>
-    </div>
 
-    <div className="chart-container">
-      <BarChart />
-    </div>
+  <a class="active" href="#home">Home</a>
+  <a href="#news">News</a>
+  <a href="#contact">Contact</a>
 
-    <div className="person-list">
-      {/* Person items */}
-    </div>
+
+  <a href="#about">About</a>
+
+  <div class="content">
+
+    <BarChart/>
+
+    <BarChart2/>
+
+    <DoughnutChart/>
+    <LineChart />
+    <ReferalTrendChart/>
+ 
   </div>
-);
+</div>
+
+
+
+  )
 };
 
-
-
-//   <div className="admin-dashboard">
-//   <div className="sidebar"> {/* Sidebar on the left */}
-//     {/* Add your sidebar content here */}
-   
-//     <BrowserRouter>
-//     <Sidebar>
-//       <Routes>
-//         <Route path="/ActivityFeed" element={<ActivityFeed />} />
-//         <Route path="/Applications" element={<Applications />} />
-//         <Route path="/Job_listing" element={<Job_listing />} />
-//         <Route path="/Employees" element={<Employees />} />
-//         <Route path="/Payouts" element={<Payouts />} />
-//         <Route path="/Referal_Program" element={<Referal_Program />} />
-//         <Route path="/Company" element={<Company />} />
-//         <Route path="/LeaderBoard" element={<LeaderBoard />} />
-
-//         <Route path="/BarChart" element={<BarChart />} />
-
-        
-//       </Routes>
-
-//     </Sidebar>
-
-//   </BrowserRouter>
-
-
-//   </div>
-
-//   <div>
-//   Hello
-// </div>
-//   <div className="person-list"> {/* List of person items on the right */}
-//     <div className="person-item">
-//       <img src="person1.svg" alt="Person 1" />
-//       <span className="person-name">John Doe</span>
-//     </div>
-//     <div className="person-item">
-//       <img src="person2.svg" alt="Person 2" />
-//       <span className="person-name">Jane Smith</span>
-//     </div>
-//     {/* Add more person items as needed */}
-//   </div>
-
-// <div>
-//   Hello
-// </div>
-
-// </div>
-
-
-
-
-
-
- export default DashboardViewPage;
+export default DashBoardView;

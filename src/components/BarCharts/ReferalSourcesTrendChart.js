@@ -1,4 +1,4 @@
-import './App.css';
+
 import {
   Chart as ChartJS,
   ArcElement,

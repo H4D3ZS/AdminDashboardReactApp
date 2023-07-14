@@ -13,7 +13,7 @@ import { NavLink } from 'react-router-dom';
 
 
 
-const Sidebar = ({children}) => {
+const SideBarLeft = ({children}) => {
     const[isOpen ,setIsOpen] = useState(false);
     const toggle = () => setIsOpen (!isOpen);
     const menuItem=[
@@ -25,7 +25,7 @@ const Sidebar = ({children}) => {
         {
             path:"/ActivityFeed",
             name:"ActivityFeed",
-            icon:<FaUserAlt/>
+            icon:<FaTh/>
         },
         {
             path:"/Applications",
@@ -67,7 +67,7 @@ const Sidebar = ({children}) => {
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="sidebar">
+           <div style={{width: isOpen ? "200px" : "50px"}} className="SideBarLeft">
                <div className="top_section">
                    <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
                    <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
@@ -88,4 +88,4 @@ const Sidebar = ({children}) => {
     );
 };
 
-export default Sidebar;
+export default SideBarLeft;

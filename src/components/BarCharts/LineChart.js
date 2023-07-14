@@ -1,4 +1,3 @@
-import './App.css';
 import { Line } from 'react-chartjs-2';
 import {
   Chart as ChartJS,
@@ -28,19 +27,19 @@ function LineChart() {
         tension: 0.5,
         fill:true,
 
-        backgroundColor: (context) => {
-          const chartArea = context.chart.chartArea;
-          const ctx = context.chart.ctx;
-          const gradient = ctx.createLinearGradient(
-            chartArea.left,
-            chartArea.bottom,
-            chartArea.left,
-            chartArea.top
-          );
-          gradient.addColorStop(0, 'rgba(173,216,230,0.5)');
-          gradient.addColorStop(1, 'white');
-          return gradient;
-        },
+        // backgroundColor: (context) => {
+        //   const chartArea = context.chart.chartArea;
+        //   const ctx = context.chart.ctx;
+        //   const gradient = ctx.createLinearGradient(
+        //     chartArea.left,
+        //     chartArea.bottom,
+        //     chartArea.left,
+        //     chartArea.top
+        //   );
+        //   gradient.addColorStop(0, 'rgba(173,216,230,0.5)');
+        //   gradient.addColorStop(1, 'white');
+        //   return gradient;
+        // },
       
       }
     ]
