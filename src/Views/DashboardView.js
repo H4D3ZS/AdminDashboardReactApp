@@ -10,65 +10,126 @@ import Referal_Program from '../components/ViewComponent/SideBarComponents/Refer
 import Company from '../components/ViewComponent/SideBarComponents/CompanyComponent';
 import LeaderBoard from '../components/ViewComponent/SideBarComponents/LeaderboardComponent';
 
-import BarChart from '../components/BarCharts/BarChart';
-import BarChart2 from '../components/BarCharts/Barchart2';
-import DoughnutChart  from '../components/BarCharts/DoughnutChart';
-import LineChart from '../components/BarCharts/LineChart';
-import ReferalTrendChart from '../components/BarCharts/ReferalSourcesTrendChart';
+import BarChart from '../components/Charts/BarChart';
+import BarChart2 from '../components/Charts/Barchart2';
+import DoughnutChart  from '../components/Charts/DoughnutChart';
+import LineChart from '../components/Charts/LineChart';
+import ReferalTrendChart from '../components/Charts/ReferalSourcesTrendChart';
 import '../App.css'
-
 
 import 'tailwindcss/tailwind.css';
 
-
+import CardView from  '../components/ViewComponent/CardComponent/Card';
 
 const DashBoardView = () => {
   return (
-    <div>
 
-    <div class="sidebar"> 
-           <BrowserRouter>
-         <SideBarLeft>
-           <Routes>
-    <Route path="/ActivityFeed" element={<ActivityFeed />} />
-       <Route path="/Applications" element={<Applications />} />
-    <Route path="/Job_listing" element={<Job_listing />} />
-       <Route path="/Employees" element={<Employees />} />
-    <Route path="/Payouts" element={<Payouts />} />
-        <Route path="/Referal_Program" element={<Referal_Program />} />
-     <Route path="/Company" element={<Company />} />
-      <Route path="/LeaderBoard" element={<LeaderBoard />} />
-           </Routes>
-         </SideBarLeft>
-       </BrowserRouter>
-      
-     </div>
+    <div class="main-container">
+
+      {/* Main Container Div */}
+
+      <div className='sidebar-container'> 
+      {/* SideBar */}
+   
+      <div className='sidebar-items'>
+      <BrowserRouter>
+          <SideBarLeft>
+            <Routes>
+              <Route path="/ActivityFeed" element={<ActivityFeed />} />
+              <Route path="/Applications" element={<Applications />} />
+              <Route path="/Job_listing" element={<Job_listing />} />
+              <Route path="/Employees" element={<Employees />} />
+              <Route path="/Payouts" element={<Payouts />} />
+              <Route path="/Referal_Program" element={<Referal_Program />} />
+              <Route path="/Company" element={<Company />} />
+              <Route path="/LeaderBoard" element={<LeaderBoard />} />
+            </Routes>
+          </SideBarLeft>
+        </BrowserRouter>
+      </div>
+
+      </div>
 
 
 
-  <a class="active" href="#home">Home</a>
-  <a href="#news">News</a>
-  <a href="#contact">Contact</a>
+
+      <div class="dashboard-container">
+
+        
+        <div className='cardview-container'>
+
+        <div class="cardview-list">
+              <CardView
+                namelabel="Employee Participation"
+                numberlabel="126"
+                percentage="2.5"
+                image
+                subparagraph={" vs last month"}
+              />
+            </div>
+
+            <div class="cardview-list">
+              <CardView
+                namelabel="Employee Participation"
+                numberlabel="126"
+                percentage="2.5"
+                image
+                subparagraph={" vs last month"}
+              />
+            </div>
+
+            <div class="cardview-list">
+              <CardView
+                namelabel="Employee Participation"
+                numberlabel="126"
+                percentage="2.5"
+                image
+                subparagraph={" vs last month"}
+              />
+            </div>
+
+            <div class="cardview-list">
+              <CardView
+                namelabel="Employee Participation"
+                numberlabel="126"
+                percentage="2.5"
+                image
+                subparagraph={" vs last month"}
+              />
 
 
-  <a href="#about">About</a>
+<div class="chart-container">
 
-  <div class="content">
+{/* Charts Here */}
 
-    <BarChart/>
+<BarChart />
 
-    <BarChart2/>
+<BarChart2 />
 
-    <DoughnutChart/>
-    <LineChart />
-    <ReferalTrendChart/>
- 
-  </div>
+<DoughnutChart />
+<LineChart />
+<ReferalTrendChart />
 </div>
+            </div>
+            
+        </div>
+
+     
+
+
+      </div>
+
+   
+
+     {/* End of Main Container */}
+
+    </div>
 
 
 
+   
   )
-};
+}
 
-export default DashBoardView;
+
+  export default DashBoardView;

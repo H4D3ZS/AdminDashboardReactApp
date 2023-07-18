@@ -9,6 +9,7 @@ import {
     FaThList
 }from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
+import Logo from '../../../images/logo.svg';
 
 
 
@@ -23,8 +24,8 @@ const SideBarLeft = ({children}) => {
         //     icon:<FaTh/>
         // },
         {
-            path:"/ActivityFeed",
-            name:"ActivityFeed",
+            path:"/Activity_Feed",
+            name:"Activit yFeed",
             icon:<FaTh/>
         },
         {
@@ -33,7 +34,7 @@ const SideBarLeft = ({children}) => {
             icon:<FaRegChartBar/>
         },
         {
-            path:"/Job_listing",
+            path:"/Job_Listing",
             name:"Job listing",
             icon:<FaCommentAlt/>
         },
@@ -49,7 +50,7 @@ const SideBarLeft = ({children}) => {
         },
         {
           path:"/Referal_Program",
-          name:"Referal_Program",
+          name:"Referral Program",
           icon:<FaThList/>
       },
 
@@ -67,18 +68,19 @@ const SideBarLeft = ({children}) => {
     ]
     return (
         <div className="container">
-           <div style={{width: isOpen ? "200px" : "50px"}} className="SideBarLeft">
+           <div style={{width:   "200px" }} className="SideBarLeft">
                <div className="top_section">
-                   <h1 style={{display: isOpen ? "block" : "none"}} className="logo">Logo</h1>
-                   <div style={{marginLeft: isOpen ? "50px" : "0px"}} className="bars">
-                       <FaBars onClick={toggle}/>
+               <img src={Logo} alt="Person 2" />
+                   {/* <h1 style={{display:  "block"}} className="logo">Logo</h1> */}
+                   <div style={{marginLeft: "50px"}} className="bars">
+             
                    </div>
                </div>
                {
                    menuItem.map((item, index)=>(
                        <NavLink to={item.path} key={index} className="link" activeclassName="active">
-                           <div className="icon">{item.icon}</div>
-                           <div style={{display: isOpen ? "block" : "none"}} className="link_text">{item.name}</div>
+                       
+                           <div  style={{display :"block"}} className="link_text"> {item.icon}  {item.name}</div>
                        </NavLink>
                    ))
                }

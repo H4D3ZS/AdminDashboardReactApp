@@ -55,6 +55,7 @@ function BarChart() {
       {
         padding: '20px',
         width: '90%',
+      
         
       }
     }
